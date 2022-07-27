@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1658954718 source:/Users/tuanhungbuivan/Desktop/c++/projekt1/Projekt/Untitled.cpp
+	<iostream>
+	<vector>
+	<stdio.h>
+
+1658954597 source:/Users/tuanhungbuivan/Desktop/c++/projekt1/Projekt/toadd.cpp
+	<iostream>
+	<vector>
+
+1658956073 source:/Users/tuanhungbuivan/Desktop/c++/projekt1/Projekt/function.cpp
+	<iostream>
+	<vector>
+
