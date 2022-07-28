@@ -1,8 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 #define n 4
+#define s 10
+
 
 void sum(vector<vector<int> >a, vector<vector<int> > b)
 {
@@ -78,24 +81,50 @@ void mult(vector<vector<int> >a, vector<vector<int> > b)
 
 }
 
-void rev(vector<vector<int> >a, vector<vector<int> > b)
+void rev()
 {
+     cout<<setprecision(5)<<endl;
+
+     float temp[s][s];
+     printf("Insert matrix that you want to reverse: \n");
+     int i,j,k;
      //reverse
-     int num=0;
-     vector<vector<int> > nowa;
-     for(int i=0;i<a.size();i++){
-          vector<int> temp;
-          for(int j=0;j<a[i].size();j++){
-               num=a[i][j]+b[i][j];
-               temp.push_back(num);
-               num=0;
+     for(int i=0;i<n;i++){
+          for(int j=0;j<n;j++){
+               cin>>temp[i][j];
           }
-          nowa.push_back(temp);
      }
-     printf("Matrix after reverse\n");
-     for(int i=0;i<nowa.size();i++){
-          for(int j=0;j<nowa[i].size();j++){
-               cout<<nowa[i][j]<<" ";
+     cout<<endl;
+     float ran=0;
+     for(int i=0;i<n;i++){
+          for(int j=0;j<n;j++){
+               if(i==j) temp[i][j+n]=1;
+               else temp[i][j+n]=0;
+          }
+     }
+     for(i=0;i<n;i++){
+          if(temp[i][i] == 0.0){
+               cout<<"Mathematical Error!";
+               exit(0);
+          }
+          for(j=0;j<n;j++){
+               if(i!=j){
+                    ran = temp[j][i]/temp[i][i];
+                    for(k=0;k<2*n;k++){
+                         temp[j][k] = temp[j][k] - ran*temp[i][k];
+                    }
+               }
+          }
+     }
+     for(int i=0;i<n;i++){
+          for(int j=n;j<2*n;j++){
+               temp[i][j]=temp[i][j]/temp[i][i];
+          }
+     }
+     printf("Reversed matrix: \n");
+     for(int i=0;i<n;i++){
+          for(int j=n;j<2*n;j++){
+               cout<<temp[i][j]<<" ";
           }
           cout<<endl;
      }

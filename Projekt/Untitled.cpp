@@ -4,12 +4,14 @@
 #include <stdlib.h>
 
 using namespace std;
+
+//easy matrix calculator
 #define n 4
 /*
 1 2 3 4
-5 6 7 8
-9 1 2 3
-4 5 6 7
+2 3 1 2
+1 1 1 -1
+1 0 -2 -6
 
 9 8 7 6
 1 3 5 7
@@ -20,7 +22,7 @@ void add(vector<vector<int> >  &x,int a);
 void sum(vector<vector<int> >a, vector<vector<int> > b);
 void sub(vector<vector<int> >a, vector<vector<int> > b);
 void mult(vector<vector<int> >a, vector<vector<int> > b);
-void rev(vector<vector<int> >a, vector<vector<int> > b);
+void rev();
 void trans(vector<vector<int> >a, vector<vector<int> > b,vector<vector<int> >c, vector<vector<int> > d);
 
 int main()
@@ -36,14 +38,13 @@ int main()
      add(m2,2);
      m3=m1;
      m4=m2;
-     printf("lol\n");
      do{
           system("CLS");
           printf("Insert your choice from 1 to 5: \n");
           printf("1 - Sum matrixes\n");
           printf("2 - Subtract matrixes\n");
           printf("3 - Multiply matrixes\n");
-          printf("4 - Reverse matrixes\n");
+          printf("4 - Reverse a matrix\n");
           printf("5 - Transporting matrixes\n");
           printf("6 - Close the terminal\n\n");
           printf("Your inserted chocie: ");
@@ -60,7 +61,7 @@ int main()
                mult(m1,m2);
                break;
           case 4:
-               rev(m1,m2);
+               rev();
                break;
           case 5:
                trans(m1,m2,m3,m4);
